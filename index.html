@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Number Guessing Game 1-100</title>
+</head>
+
+<body>
+    <header>
+
+        <h1>Rock Scissor Paper <br> game</h1>
+
+        <h2>How many rounds would you like to play?</h2>
+
+        <form action="" id="options">
+            <input type="radio" id="opt5" name="option" value="5" checked onchange="getRounds()">
+            <label>5</label>
+            <input type="radio" id="opt10" name="option" value="10" onchange="getRounds()">
+            <label>10</label>
+            <input type="radio" id="opt15" name="option" value="15" onchange="getRounds()">
+            <label>15</label>
+            <input type="radio" id="opt20" name="option" value="20" onchange="getRounds()">
+            <label>20</label>
+        </form>
+    </header>
+
+    <main>
+    <br>
+    <div id="round-container">
+        <span id="round">0</span>/<span id="round-total">5</span>
+    </div>
+
+    <div>
+        <div id="result"> </div>
+    </div>
+
+    <section>
+        <input type="button" value="Rock" onclick="play('rock')" id="rock">
+        <input type="button" value="Paper" onclick="play('paper')" id="scissor">
+        <input type="button" value="Scissor" onclick="play('scissor')" id="paper">
+        <h2> MAKE YOUR MOVE :D </h2>
+        
+    </section>
+</main>
+
+<footer>
+    <input type="button" value="restart" onclick="restart()">
+</footer>
+
+    <script src="assets/js/main.js"> </script>
+</body>
+
+</html>
