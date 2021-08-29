@@ -21,8 +21,11 @@ body {
   width: 50%;
   margin: 0 auto;
   text-align: center;
-  background: #000;
   color: white;
+}
+header h1 {
+  color: #000428;
+  font-size: 2em;
 }
 
 section,

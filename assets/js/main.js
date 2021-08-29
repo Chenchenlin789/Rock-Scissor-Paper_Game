@@ -37,12 +37,12 @@ let computerChoiceFunction = () => {
   }
 };
 
-let counter = 1;
+let counter = 0;
 
 //play the game
 function play(playerChoice) {
   roundTotal.innerHTML = chosenRounds;
-  round.innerHTML = counter;
+  round.innerHTML = counter + 1;
   roundContainer.style.display = "block";
 
   let computerChoice = computerChoiceFunction();
@@ -90,6 +90,7 @@ function play(playerChoice) {
   }
   console.log(playerWins);
   console.log(computerWins);
+  console.log(counter + " / " + chosenRounds);
 
   if (counter == chosenRounds) {
     result2.style.display = "block";
@@ -99,7 +100,7 @@ function play(playerChoice) {
       result2.innerHTML = "<section class='lose'>PLAYER WINS</section>";
     }
   } else {
-    result2.style.display = "block";
+    result2.style.display = "none";
   }
 }
 
