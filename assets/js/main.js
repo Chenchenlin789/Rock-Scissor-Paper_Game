@@ -6,6 +6,10 @@ const roundContainer = document.getElementById("round-container");
 const roundTotal = document.getElementById("round-total");
 const round = document.getElementById("round");
 
+let playerWins = 0;
+let computerWins = 0;
+let result2 = document.getElementById("result2");
+
 // user choose the rounds
 let getRounds = () => {
   if (document.getElementById("opt5").checked) {
@@ -33,7 +37,7 @@ let computerChoiceFunction = () => {
   }
 };
 
-let counter = 0;
+let counter = 1;
 
 //play the game
 function play(playerChoice) {
@@ -50,33 +54,52 @@ function play(playerChoice) {
 
     if (playerChoice == "rock") {
       if (computerChoice == "rock") {
-        result.innerHTML = "<section class='colorDraw'>DRAW</section>";
-      } else if ((computerChoice = 1)) {
-        result.innerHTML = "<section class='colorWin'>YOU WIN</section>";
-      } else if ((computerChoice = 2)) {
-        result.innerHTML = "<section class='colorLose'>YOU LOSE</section>";
+        result.innerHTML = "<section class='colorDraw'>Draw</section>";
+      } else if (computerChoice == "scissor") {
+        playerWins++;
+        result.innerHTML = "<section class='colorWin'>You win</section>";
+      } else if (computerChoice == "paper") {
+        playerWins--;
+        result.innerHTML = "<section class='colorLose'>You lose</section>";
       }
     }
 
     if (playerChoice == "scissor") {
       if (computerChoice == "rock") {
-        result.innerHTML = "<section class='colorLose'>YOU LOSE</section>";
+        result.innerHTML = "<section class='colorLose'>You lose</section>";
       } else if (computerChoice == "scissor") {
-        result.innerHTML = "<section class='colorDraw'>DRAW</section>";
+        playerWins++;
+        result.innerHTML = "<section class='colorDraw'>draw</section>";
       } else if (computerChoice == "paper") {
-        result.innerHTML = "<section class='colorWin'>YOU WIN</section>";
+        playerWins--;
+        result.innerHTML = "<section class='colorWin'>You win</section>";
       }
     }
 
     if (playerChoice == "paper") {
       if (computerChoice == "rock") {
-        result.innerHTML = "<section class='colorLose'>YOU LOSE</section>";
+        result.innerHTML = "<section class='colorLose'>You Lose</section>";
       } else if (computerChoice == "scissor") {
-        result.innerHTML = "<section class='colorDraw'>DRAW</section>";
+        playerWins++;
+        result.innerHTML = "<section class='colorDraw'>Draw</section>";
       } else if (computerChoice == "paper") {
-        result.innerHTML = "<section class='colorWin'>YOU WIN</section>";
+        playerWins--;
+        result.innerHTML = "<section class='colorWin'>You win</section>";
       }
     }
+  }
+  console.log(playerWins);
+  console.log(computerWins);
+
+  if (counter == chosenRounds) {
+    result2.style.display = "block";
+    if (computerWins > playerWins) {
+      result2.innerHTML = "<section class='win'>COMPUTER WINS</section>";
+    } else {
+      result2.innerHTML = "<section class='lose'>PLAYER WINS</section>";
+    }
+  } else {
+    result2.style.display = "block";
   }
 }
 
