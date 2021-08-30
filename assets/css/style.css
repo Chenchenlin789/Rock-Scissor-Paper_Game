@@ -38,13 +38,13 @@ section,
 input {
   border: 2px solid white;
   padding: 1em;
-  margin: 1px;
+  margin: 13px;
   color: #000428;
   border-radius: 3px;
 }
 input:hover,
 input:focus {
-  margin: 1px;
+  margin: 13px;
   padding: 2em;
   color: #000428;
   outline: 3px solid white;
