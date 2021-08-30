@@ -13,7 +13,6 @@
 }
 
 html {
-  font-family: sans-serif;
   font-family: "Indie Flower", cursive;
 }
 
@@ -36,7 +35,26 @@ section,
   background: linear-gradient(to left, #000428, #004e92);
 }
 
-.win {
+input {
+  border: 2px solid white;
+  padding: 1em;
+  margin: 1px;
+  color: #000428;
+  border-radius: 3px;
+}
+input:hover,
+input:focus {
+  margin: 1px;
+  padding: 2em;
+  color: #000428;
+  outline: 3px solid white;
+  border: 2px solid #000428;
+  border-radius: 3px;
+  outline-offset: -2px;
+  transition: outline-offset 250ms ease;
+}
+
+/* .win {
   background-color: red;
   color: white;
 }
@@ -44,4 +62,4 @@ section,
 .lose {
   background-color: green;
   color: white;
-}
+} */
